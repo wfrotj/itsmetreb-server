@@ -19,7 +19,7 @@ const __dirname = path.dirname(__filename);
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static("dist"));
+app.use("/", express.static(path.join(__dirname, "dist")));
 app.use("/", messageRouter);
 
 app.all("*", (req, res) => {
